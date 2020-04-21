@@ -34,11 +34,11 @@ rm -rf images/
 
 # We need this empty file for git not to try to build a jekyll project.
 # If your project *is* Jekyll, then this doesn't apply to you...
-echo "--- moving built files into the top-level directory"
-touch .nojekyll
-mv build/doc-Service-Telemetry-Framework/* ./
-mv index-upstream.html index.html
-rm -rf build/
+//echo "--- moving built files into the top-level directory"
+//touch .nojekyll
+//mv build/doc-Service-Telemetry-Framework/* ./
+//mv index-upstream.html index.html
+//rm -rf build/
 
 # Add everything, get ready for commit. But only do it if we're on
 # master. If you want to deploy on different branches, you can change
@@ -49,7 +49,8 @@ if [[ "$BRANCH" =~ ^master$|^[0-9]+\.[0-9]+\.X$ ]]; then
     git commit -am '[ci skip] publishing updated documentation...'
 
     git remote rm origin
-    git remote add origin https://$GH_NAME:$GH_TOKEN@github.com/infrawatch/documentation.git
+    git remote add origin https://$GH_NAME:$GH_TOKEN@github.com/JoanneOFlynn2018/JOF-test.git
+  
 
     git push origin gh-pages
 else
